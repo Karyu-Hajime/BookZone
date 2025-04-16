@@ -1,0 +1,271 @@
+/* CSS Reset: Áp dụng cho tất cả phần tử */
+* {
+    margin: 0; /* Xóa khoảng cách bên ngoài mặc định của tất cả phần tử */
+    padding: 0; /* Xóa khoảng đệm bên trong mặc định của tất cả phần tử */
+    box-sizing: border-box; /* Tính kích thước bao gồm padding và border cho tất cả phần tử */
+}
+
+/* Định dạng cơ bản cho body */
+body {
+    font-family: 'Roboto', sans-serif; /* Sử dụng font Roboto từ Google Fonts, với sans-serif làm dự phòng */
+    line-height: 1.6; /* Độ cao dòng 1.6 lần kích thước chữ, đảm bảo dễ đọc */
+    color: #333; /* Màu chữ xám đậm cho toàn bộ trang */
+}
+
+/* Container: Vùng chứa chính */
+.container {
+    max-width: 1200px; /* Chiều rộng tối đa 1200px để giới hạn nội dung */
+    margin: 0 auto; /* Căn giữa container trên trang */
+    padding: 0 20px; /* Khoảng đệm 0px trên dưới, 20px trái phải */
+}
+
+/* Navbar: Thanh điều hướng */
+.navbar {
+    background-color: #63b400; /* Màu nền xanh lá đậm cho thanh điều hướng */
+    color: white; /* Màu chữ trắng cho nội dung trong navbar */
+    position: fixed; /* Cố định thanh điều hướng ở đầu trang khi cuộn */
+    width: 100%; /* Chiếm toàn bộ chiều rộng của trang */
+    top: 0; /* Đặt ở vị trí đỉnh trang */
+    z-index: 1000; /* Đảm bảo navbar hiển thị trên các phần tử khác (z-index cao) */
+}
+
+/* Container bên trong navbar */
+.navbar .container {
+    display: flex; /* Sử dụng flexbox để căn chỉnh nội dung trong container */
+    justify-content: space-between; /* Logo bên trái, menu và nút bên phải */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    padding: 15px 20px; /* Khoảng đệm 15px trên dưới, 20px trái phải */
+}
+
+/* Logo: Định dạng logo */
+.logo a {
+    font-family: 'Montserrat', sans-serif; /* Sử dụng font Montserrat cho logo */
+    font-size: 1.8rem; /* Kích thước chữ 1.8rem (khoảng 28.8px) */
+    color: white; /* Màu chữ trắng cho logo */
+    text-decoration: none; /* Xóa gạch chân của liên kết logo */
+}
+
+/* Nav Menu: Định dạng vùng menu điều hướng */
+.nav-menu {
+    display: flex; /* Sử dụng flexbox để các mục menu nằm ngang */
+}
+
+/* Danh sách bên trong nav menu */
+.nav-menu ul {
+    display: flex; /* Các mục <li> trong danh sách nằm ngang */
+    list-style: none; /* Xóa dấu đầu dòng của danh sách */
+}
+
+/* Mỗi mục trong menu (li.nav-link) */
+.nav-link {
+    margin-left: 20px; /* Khoảng cách 20px giữa các mục menu */
+    list-style: none; /* Xóa dấu đầu dòng (đề phòng thừa kế từ ul cha) */
+}
+
+/* Liên kết trong mục menu */
+.nav-link a {
+    color: white; /* Màu chữ trắng cho các liên kết trong menu */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    font-size: 1rem; /* Kích thước chữ 1rem (16px) */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu chữ trong 0.3 giây khi hover */
+}
+
+/* Hiệu ứng hover và trạng thái active cho liên kết */
+.nav-link a:hover,
+.nav-link a.active {
+    color: #ffd700; /* Màu vàng khi hover hoặc liên kết đang ở trạng thái active */
+}
+
+/* Nút Đăng Nhập và Đăng Ký */
+.auth-buttons .btn-login,
+.auth-buttons .btn-register {
+    color: white; /* Màu chữ trắng cho nút */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    padding: 8px 15px; /* Khoảng đệm 8px trên dưới, 15px trái phải */
+    border-radius: 5px; /* Bo góc 5px cho nút */
+    margin-left: 10px; /* Khoảng cách 10px giữa các nút */
+}
+
+/* Hero Section: Banner chính */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg'); /* Lớp phủ gradient đen mờ và ảnh nền */
+    background-color: #333; /* Màu nền dự phòng (xám đậm) nếu ảnh không tải */
+    background-size: cover; /* Phóng to ảnh để phủ kín toàn bộ khu vực */
+    background-position: center; /* Căn giữa ảnh nền */
+    height: 100vh; /* Chiều cao bằng toàn bộ khung nhìn (viewport height) */
+    display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    text-align: center; /* Căn giữa chữ theo chiều ngang */
+    color: white; /* Màu chữ trắng cho nội dung trong banner */
+    animation: fadeIn 1s ease-in; /* Áp dụng hoạt ảnh fadeIn kéo dài 1 giây */
+}
+
+/* Định dạng tiêu đề trong hero */
+.hero h1 {
+    font-size: 3rem; /* Kích thước chữ 3rem (48px) cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách 20px dưới tiêu đề */
+}
+
+/* Định dạng đoạn văn trong hero */
+.hero p {
+    font-size: 1.2rem; /* Kích thước chữ 1.2rem (19.2px) cho đoạn văn */
+    max-width: 800px; /* Giới hạn chiều rộng đoạn văn tối đa 800px */
+    margin: 0 auto 30px; /* Căn giữa đoạn văn và thêm khoảng cách 30px phía dưới */
+}
+
+/* Định dạng nút "Xem Thêm" */
+.cta-button {
+    display: inline-block; /* Hiển thị như một khối inline để hoạt động như nút */
+    padding: 10px 20px; /* Khoảng đệm 10px trên dưới, 20px trái phải */
+    background-color: #ffd700; /* Màu nền vàng cho nút */
+    color: #333; /* Màu chữ xám đậm */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    border-radius: 5px; /* Bo góc 5px cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền trong 0.3 giây khi hover */
+}
+
+/* Hiệu ứng hover cho nút "Xem Thêm" */
+.cta-button:hover {
+    background-color: #e6c200; /* Màu vàng đậm hơn khi hover */
+}
+
+/* Intro Section: Phần giới thiệu ngắn */
+.intro {
+    padding: 80px 20px; /* Khoảng đệm 80px trên dưới, 20px trái phải */
+    text-align: center; /* Căn giữa nội dung trong phần giới thiệu */
+}
+
+/* Định nghĩa hoạt ảnh fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Bắt đầu từ trạng thái trong suốt (opacity 0) */
+    }
+    to {
+        opacity: 1; /* Kết thúc ở trạng thái hiển thị hoàn toàn (opacity 1) */
+    }
+}
+
+/* Footer: Phần chân trang */
+.footer {
+    background-color: #00ff91; /* Màu nền xanh lá sáng cho footer */
+    color: white; /* Màu chữ trắng cho nội dung footer */
+    padding: 40px 20px; /* Khoảng đệm 40px trên dưới, 20px trái phải */
+}
+
+/* Footer Grid: Lưới bố cục trong footer */
+.footer-grid {
+    display: grid; /* Sử dụng grid để chia bố cục thành các cột */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tạo cột tự động, mỗi cột tối thiểu 200px, tối đa 1 phần bằng nhau */
+    gap: 20px; /* Khoảng cách 20px giữa các cột */
+    margin-bottom: 20px; /* Khoảng cách 20px dưới lưới */
+}
+
+/* Tiêu đề trong các phần của footer */
+.footer-info h3,
+.footer-links h3,
+.footer-social h3 {
+    font-family: 'Montserrat', sans-serif; /* Sử dụng font Montserrat cho tiêu đề */
+    font-size: 1.5rem; /* Kích thước chữ 1.5rem (24px) */
+    margin-bottom: 15px; /* Khoảng cách 15px dưới tiêu đề */
+}
+
+/* Danh sách liên kết trong footer */
+.footer-links ul {
+    list-style: none; /* Xóa dấu đầu dòng của danh sách */
+}
+
+/* Liên kết trong footer */
+.footer-links a {
+    color: white; /* Màu chữ trắng cho liên kết */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    line-height: 2; /* Độ cao dòng gấp 2 lần, tạo khoảng cách giữa các liên kết */
+}
+
+/* Hiệu ứng hover cho liên kết trong footer */
+.footer-links a:hover {
+    color: #ffd700; /* Màu vàng khi hover */
+}
+
+/* Biểu tượng mạng xã hội trong footer */
+.footer-social a {
+    color: white; /* Màu trắng cho biểu tượng */
+    font-size: 1.5rem; /* Kích thước biểu tượng 1.5rem (24px) */
+    margin-right: 15px; /* Khoảng cách 15px giữa các biểu tượng */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu trong 0.3 giây khi hover */
+}
+
+/* Hiệu ứng hover cho biểu tượng mạng xã hội */
+.footer-social a:hover {
+    color: #ffd700; /* Màu vàng khi hover */
+}
+
+/* Bản quyền trong footer */
+.footer-copy {
+    text-align: center; /* Căn giữa văn bản bản quyền */
+    font-size: 0.9rem; /* Kích thước chữ 0.9rem (14.4px) */
+}
+
+/* Nút "Back to Top" */
+.back-to-top {
+    display: inline-block; /* Hiển thị như khối inline để hoạt động như nút */
+    background-color: #ffd700; /* Màu nền vàng */
+    color: #333; /* Màu chữ (biểu tượng) xám đậm */
+    width: 40px; /* Chiều rộng 40px */
+    height: 40px; /* Chiều cao 40px */
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    text-align: center; /* Căn giữa biểu tượng trong nút */
+    line-height: 40px; /* Căn giữa biểu tượng theo chiều dọc */
+    text-decoration: none; /* Xóa gạch chân của liên kết */
+    margin-top: 20px; /* Khoảng cách 20px phía trên nút */
+}
+
+/* Hiệu ứng hover cho nút "Back to Top" */
+.back-to-top:hover {
+    background-color: #e6c200; /* Màu vàng đậm hơn khi hover */
+}
+
+/* Testimonials Section: Phần đánh giá khách hàng */
+.testimonials {
+    padding: 80px 20px; /* Khoảng đệm 80px trên dưới, 20px trái phải */
+    text-align: center; /* Căn giữa nội dung trong phần testimonials */
+}
+
+/* Tiêu đề trong testimonials */
+.testimonials h2 {
+    font-family: 'Montserrat', sans-serif; /* Sử dụng font Montserrat cho tiêu đề */
+    font-size: 2.5rem; /* Kích thước chữ 2.5rem (40px) */
+    margin-bottom: 40px; /* Khoảng cách 40px dưới tiêu đề */
+}
+
+/* Lưới bố cục cho các đánh giá */
+.testimonial-grid {
+    display: grid; /* Sử dụng grid để chia bố cục thành các cột */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tạo cột tự động, mỗi cột tối thiểu 300px, tối đa 1 phần bằng nhau */
+    gap: 20px; /* Khoảng cách 20px giữa các mục đánh giá */
+}
+
+/* Mỗi mục đánh giá */
+.testimonial-item {
+    background-color: #f9f9f9; /* Màu nền xám nhạt cho mục đánh giá */
+    padding: 20px; /* Khoảng đệm 20px bên trong mục */
+    border-radius: 10px; /* Bo góc 10px cho mục */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ (0px ngang, 4px dọc, 10px mờ, màu đen mờ) */
+}
+
+/* Đoạn văn trong mục đánh giá */
+.testimonial-item p {
+    font-style: italic; /* Chữ nghiêng cho đoạn văn (phong cách đánh giá) */
+    margin-bottom: 15px; /* Khoảng cách 15px dưới đoạn văn */
+}
+
+/* Tên khách hàng trong mục đánh giá */
+.testimonial-item h4 {
+    font-size: 1.2rem; /* Kích thước chữ 1.2rem (19.2px) */
+    color: #00ffb7; /* Màu xanh lá sáng cho tên khách hàng */
+}
+
+/* Thông tin bổ sung (chức danh) trong mục đánh giá */
+.testimonial-item span {
+    font-size: 0.9rem; /* Kích thước chữ 0.9rem (14.4px) */
+    color: #666; /* Màu xám cho thông tin bổ sung */
+}
