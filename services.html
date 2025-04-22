@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BookZone – Nền tảng bán sách chuyên ngành và học liệu đáng tin cậy dành cho sinh viên, giảng viên và người học chuyên sâu.">
     <meta name="author" content="Karyu">
-    <title>BookZone - Trang Chủ</title>
+    <title>BookZone - Dịch Vụ</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,9 +18,9 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li class="nav-link"><a href="index.html" class="active">Trang Chủ</a></li>
+                    <li class="nav-link"><a href="index.html">Trang Chủ</a></li>
                     <li class="nav-link"><a href="about.html">Giới Thiệu</a></li>
-                    <li class="nav-link"><a href="services.html">Dịch Vụ</a></li>
+                    <li class="nav-link"><a href="services.html" class="active">Dịch Vụ</a></li>
                     <li class="nav-link"><a href="products.html">Sản Phẩm</a></li>
                     <li class="nav-link"><a href="news.html">Tin Tức</a></li>
                     <li class="nav-link"><a href="contact.html">Liên Hệ</a></li>
@@ -33,28 +33,6 @@
         </div>
     </header>
 
-    <!-- Banner -->
-    <section class="hero">
-        <div class="container">
-            <h1>Chào Mừng Đến Với BookZone</h1>
-            <p>BookZone – Nền tảng bán sách chuyên ngành và học liệu đáng tin cậy dành cho sinh viên, giảng viên và người học chuyên sâu.</p>
-            <a href="about.html" class="cta-button">Xem Thêm</a>
-        </div>
-    </section>
-
-
-    <!-- Giới thiệu ngắn -->
-    <section class="intro">
-        <div class="container">
-            <h2>🏢 Về Chúng Tôi – BookZone</h2>
-            <p>Chào mừng bạn đến với BookZone – không gian dành cho những ai yêu tri thức và đam mê học hỏi.
-
-                Chúng tôi là nền tảng chuyên cung cấp sách chuyên ngành, giáo trình đại học, và tài liệu học tập chất lượng, nhằm hỗ trợ sinh viên, giảng viên và người học tự do trong hành trình chinh phục kiến thức.</p>
-            <a href="about.html" class="read-more">Tìm Hiểu Thêm</a>
-        </div>
-    </section>
-
-        <!-- Dịch Vu -->
     <section class="service">
         <div class="container">
             <h1>Dịch Vụ Của Chúng Tôi</h1>
@@ -64,49 +42,36 @@
                     <h3>Cung cấp sách chuyên ngành</h3>
                     <p>BookZone cung cấp đa dạng các đầu sách chuyên ngành, giáo trình và tài liệu học thuật được chọn lọc từ các nhà xuất bản uy tín trong và ngoài nước.
 Chúng tôi đảm bảo mỗi cuốn sách đều có nguồn gốc rõ ràng, nội dung chính xác, phù hợp với chương trình đào tạo tại các trường đại học, viện nghiên cứu.</p>
-                    <a href="services.html" class="card-link">Xem chi tiết</a>
+                    <a href="dv1cungcap.html" class="card-link">Xem chi tiết</a>
                 </div>
                 <div class="service-card">
                     <img src="images/dichvu2.jpg" alt="Tư vấn" loading="lazy">
                     <h3>Tư vấn chọn sách học tập</h3>
                     <p>Bạn phân vân không biết nên bắt đầu từ đâu? Đừng lo – đội ngũ hỗ trợ của BookZone luôn sẵn sàng tư vấn chọn sách phù hợp. Dù bạn là sinh viên năm nhất hay người đi làm đang muốn tự học nâng cao chuyên môn, chúng tôi sẽ giúp bạn tìm đúng sách – tiết kiệm thời gian – học hiệu quả hơn.</p>
-                    <a href="services.html" class="card-link">Xem chi tiết</a>
+                    <a href="dv2tuvan.html" class="card-link">Xem chi tiết</a>
                 </div>
                 <div class="service-card">
                     <img src="images/dichvu3.jpg" alt="Giao Hang" loading="lazy">
                     <h3>Giao hàng toàn quốc</h3>
                     <p>BookZone hỗ trợ giao hàng toàn quốc. Đóng gói cẩn thận để bảo vệ sách khỏi cong, rách, ẩm. Giao nhanh, có thể nhận trong 1–3 ngày làm việc tùy khu vực. Kiểm tra hàng trước khi thanh toán. Cập nhật trạng thái đơn hàng theo thời gian thực</p>
-                    <a href="services.html" class="card-link">Xem chi tiết</a>
+                    <a href="dv3giaohang.html" class="card-link">Xem chi tiết</a>
                 </div>
+            </div>
+            <div class="service-detail" id="web-detail">
+                <form class="quote-form">
+                    <h3>Yêu Cầu Báo Giá</h3>
+                    <label for="name">Họ Tên</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <label for="message">Yêu Cầu</label>
+                    <textarea id="message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button">Gửi</button>
+                </form>
             </div>
         </div>
     </section>
-
-
-    <!-- Khách Hàng Đánh Giá -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Khách Hàng Nói Gì</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p>“BookZone giúp mình tìm đúng sách chuyên ngành nhanh hơn rất nhiều so với trước. Giao hàng cũng nhanh, sách được đóng gói cẩn thận.”</p>
-                    <h4>Ngọc Hân</h4>
-                    <span>Sinh viên Kinh tế</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"“Mình rất thích việc có thể lọc sách theo bộ môn. Mỗi lần cần tài liệu tham khảo là cứ vào BookZone, khỏi phải lướt web cả buổi.”</p>
-                    <h4>Lê Thảo Nhi</h4>
-                    <span>Sinh viên – Hà Nội</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>“Giá hợp lý, nội dung đúng nhu cầu, lại có nhiều đầu sách chuyên sâu mà hiệu sách ngoài không có. BookZone là lựa chọn số 1 của mình.”</p>
-                    <h4>Phạm Hoàng Duy</h4>
-                    <span>Sinh viên Công nghệ Thông tin</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -137,9 +102,5 @@ Chúng tôi đảm bảo mỗi cuốn sách đều có nguồn gốc rõ ràng, 
             <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
         </div>
     </footer>
-
-    
-
-
 </body>
 </html>
