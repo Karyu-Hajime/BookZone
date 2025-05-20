@@ -1,792 +1,951 @@
-/* CSS Reset: Áp dụng cho tất cả phần tử */
+
 * {
-    margin: 0; /* Xóa khoảng cách bên ngoài mặc định của tất cả phần tử */
-    padding: 0; /* Xóa khoảng đệm bên trong mặc định của tất cả phần tử */
-    box-sizing: border-box; /* Tính kích thước bao gồm padding và border */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Định dạng cơ bản cho body */
+
 body {
-    font-family: 'Roboto', sans-serif; /* Font chính cho toàn trang */
-    line-height: 1.6; /* Độ cao dòng để dễ đọc */
-    color: #333; /* Màu chữ xám đậm */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Container: Vùng chứa chính */
+/* ==========================================================================
+   Bố Cục và Container
+   ========================================================================== */
+
 .container {
-    max-width: 1200px; /* Chiều rộng tối đa */
-    margin: 0 auto; /* Căn giữa */
-    padding: 0 20px; /* Khoảng đệm trái phải */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
-/* Navbar: Thanh điều hướng */
-.navbar {
-    background-color: #63b400; /* Màu xanh lá đậm */
-    position: fixed; /* Cố định ở đầu trang */
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
-    top: 0; /* Đặt ở đỉnh */
-    z-index: 1000; /* Đảm bảo hiển thị trên các phần tử khác */
+/* ==========================================================================
+   Kiểu Chữ (Typography)
+   ========================================================================== */
+/* Định dạng font cho các tiêu đề */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif; 
 }
+
+
+h1 { font-size: 3rem; }
+
+
+h2 { font-size: 1.5rem;  }
+
+
+h3 { font-size: 1.8rem; }
+
+
+h4 { font-size: 1.2rem;  }
+
+/* Định dạng đoạn văn bản */
+p {
+    font-size: 1rem; 
+    color: #7d8074; 
+}
+
+/* ==========================================================================
+   Thanh Điều Hướng (Navbar)
+   ========================================================================== */
+
+.navbar {
+    background-color: #63b400; 
+    position: fixed; /*Cố định thanh navbar*/
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+}
+
 
 .navbar .container {
-    display: flex; /* Sử dụng flexbox */
+    display: flex; 
     justify-content: space-between; /* Logo bên trái, menu bên phải */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 15px 20px; /* Khoảng đệm */
+    align-items: center; 
+    padding: 15px 20px; 
 }
 
+/* Định dạng logo */
 .logo a {
-    font-family: 'Montserrat', sans-serif; /* Font logo */
-    font-size: 1.8rem; /* Kích thước chữ logo */
-    color: rgb(255, 255, 255); /* Màu trắng */
-    text-decoration: none; /* Xóa gạch chân */
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.8rem; 
+    color: #fff; 
+    text-decoration: none; /* Xóa gạch chân liên kết */
 }
 
-.nav-menu {
-    display: flex; /* Menu nằm ngang */
-}
 
 .nav-menu ul {
-    display: flex; /* Các mục menu nằm ngang */
+    display: flex; 
     list-style: none; /* Xóa dấu đầu dòng */
 }
 
+
 .nav-link {
-    margin-left: 20px; /* Khoảng cách giữa các mục */
+    margin-left: 20px; 
 }
 
+
 .nav-link a {
-    color: white;
-    text-decoration: none; /* Xóa gạch chân */
-    font-size: 1rem; /* Kích thước chữ */
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 1rem; 
     transition: color 0.3s; /* Hiệu ứng chuyển màu */
 }
 
+
 .nav-link a:hover,
 .nav-link a.active {
-    color: #ffd700; /* Màu vàng khi hover hoặc active */
+    color: #ffd700; 
 }
 
-/* buttonlogin */
+
 .auth-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-    margin-top: 20px;
+    display: flex; 
+    gap: 15px; 
 }
+
 
 .auth-buttons a {
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 15px; 
+    font-weight: bold; 
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
 }
+
 
 .btn-login {
-    background-color: #4CAF50; /* Xanh lá */
-    color: white;
+    background-color: #4CAF50; 
+    color: #fff; 
 }
+
 
 .btn-login:hover {
-    background-color: #ff0800;
+    background-color: #ff0800; 
 }
+
 
 .btn-regester {
-    background-color: #ffea00; /* Xanh dương */
-    color: white;
+    background-color: #ffea00; 
+    color: #fff; 
 }
+
 
 .btn-regester:hover {
-    background-color: #51ff00;
+    background-color: #51ff00; 
 }
 
+/* ==========================================================================
+   Phần Banner Chính (Hero Section)
+   ========================================================================== */
 
-/* Hero Section: Banner chính */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg'); /* Gradient và ảnh nền */
-    background-size: cover; /* Phủ kín khu vực */
-    background-position: center; /* Căn giữa ảnh */
-    height: 100vh; /* Chiều cao toàn khung nhìn */
-    display: flex; /* Căn chỉnh nội dung */
-    align-items: center; /* Căn giữa dọc */
-    text-align: center; /* Căn giữa ngang */
-    color: white; /* Màu chữ trắng */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg'); /* Lớp phủ gradient*/
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    text-align: center; 
+    color: #fff; 
+    animation: fadeIn 1s ease-in; 
 }
+
 
 .hero h1 {
-    font-size: 3rem; /* Kích thước tiêu đề */
-    margin-bottom: 20px; /* Khoảng cách dưới */
+    font-size: 3rem; 
+    margin-bottom: 20px; 
 }
+
 
 .hero p {
-    font-size: 1.2rem; /* Kích thước chữ đoạn văn */
-    max-width: 800px; /* Chiều rộng tối đa */
-    margin: 0 auto 30px; /* Căn giữa và khoảng cách dưới */
+    font-size: 1.2rem; 
+    max-width: 800px; 
+    margin: 0 auto 30px; 
 }
 
+/* Nút Xem Thêm Banner */
 .cta-button {
-    display: inline-block; /* Hiển thị như nút */
-    padding: 10px 20px; /* Khoảng đệm */
-    background-color: #ffd700; /* Màu vàng */
-    color: #333; /* Màu chữ */
-    text-decoration: none; /* Xóa gạch chân */
-    border-radius: 5px; /* Bo góc */
-    transition: background-color 0.3s; /* Hiệu ứng hover */
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-color: #ffd700; 
+    color: #333; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu*/
 }
+
 
 .cta-button:hover {
-    background-color: #e6c200; /* Màu vàng đậm khi hover */
+    background-color: #ff6600; 
 }
 
-/* Intro Section: Phần giới thiệu ngắn */
-.intro {
-    padding: 80px 20px; /* Khoảng đệm */
-    text-align: center; /* Căn giữa */
-}
-
-/* Định nghĩa hoạt ảnh fadeIn */
+/* Hiệu ứng fadeIn */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; } 
+    to { opacity: 1; } 
 }
 
-/* Footer: Phần chân trang */
-.footer {
-    background-color: #00ff91; /* Màu xanh lá sáng */
-    color: white; /* Màu chữ trắng */
-    padding: 40px 20px; /* Khoảng đệm */
+/* ==========================================================================
+   Phần Giới Thiệu Ngắn (Intro Section)
+   ========================================================================== */
+
+.intro {
+    padding: 80px 20px; 
+    text-align: center; 
 }
 
-.footer-grid {
-    display: grid; /* Sử dụng grid */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cột tự động */
-    gap: 20px; /* Khoảng cách giữa cột */
-    margin-bottom: 20px; /* Khoảng cách dưới */
+/*"Tìm Hiểu Thêm"*/
+.read-more {
+    color: #63b400; 
+    text-decoration: none; 
+    font-weight: bold; 
 }
 
-.footer-info h3,
-.footer-links h3,
-.footer-social h3 {
-    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
-    font-size: 1.5rem; /* Kích thước chữ */
-    margin-bottom: 15px; /* Khoảng cách dưới */
+
+.read-more:hover {
+    color: #ff4800; 
 }
 
-.footer-links ul {
-    list-style: none; /* Xóa dấu đầu dòng */
-}
+/* ==========================================================================
+   Phần Dịch Vụ (Service Section)
+   ========================================================================== */
 
-.footer-links a {
-    color: white; /* Màu trắng */
-    text-decoration: none; /* Xóa gạch chân */
-    line-height: 2; /* Độ cao dòng */
-}
-
-.footer-links a:hover {
-    color: #ffd700; /* Màu vàng khi hover */
-}
-
-.footer-social a {
-    color: white; /* Màu trắng */
-    font-size: 1.5rem; /* Kích thước biểu tượng */
-    margin-right: 15px; /* Khoảng cách giữa biểu tượng */
-    transition: color 0.3s; /* Hiệu ứng hover */
-}
-
-.footer-social a:hover {
-    color: #ffd700; /* Màu vàng khi hover */
-}
-
-.footer-copy {
-    text-align: center; /* Căn giữa */
-    font-size: 0.9rem; /* Kích thước chữ */
-}
-
-.back-to-top {
-    display: inline-block; /* Hiển thị như nút */
-    background-color: #ffd700; /* Màu vàng */
-    color: #333; /* Màu chữ */
-    width: 40px; /* Chiều rộng */
-    height: 40px; /* Chiều cao */
-    border-radius: 50%; /* Hình tròn */
-    text-align: center; /* Căn giữa */
-    line-height: 40px; /* Căn giữa dọc */
-    text-decoration: none; /* Xóa gạch chân */
-    margin-top: 20px; /* Khoảng cách trên */
-}
-
-.back-to-top:hover {
-    background-color: #e6c200; /* Màu vàng đậm khi hover */
-}
-
-/* Testimonials Section: Phần đánh giá khách hàng */
-.testimonials {
-    padding: 80px 20px; /* Khoảng đệm */
-    text-align: center; /* Căn giữa */
-}
-
-.testimonials h2 {
-    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
-    font-size: 2.5rem; /* Kích thước chữ */
-    margin-bottom: 40px; /* Khoảng cách dưới */
-}
-
-.testimonial-grid {
-    display: grid; /* Sử dụng grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cột tự động */
-    gap: 20px; /* Khoảng cách giữa mục */
-}
-
-.testimonial-item {
-    background-color: #f9f9f9; /* Màu xám nhạt */
-    padding: 20px; /* Khoảng đệm */
-    border-radius: 10px; /* Bo góc */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-}
-
-.testimonial-item p {
-    font-style: italic; /* Chữ nghiêng */
-    margin-bottom: 15px; /* Khoảng cách dưới */
-}
-
-.testimonial-item h4 {
-    font-size: 1.2rem; /* Kích thước chữ */
-    color: #00ffb7; /* Màu xanh lá sáng */
-}
-
-.testimonial-item span {
-    font-size: 0.9rem; /* Kích thước chữ */
-    color: #666; /* Màu xám */
-}
-
-/* About Section: Phần Giới Thiệu */
-.about {
-    padding: 120px 20px; /* Khoảng đệm */
-    background-color: #f8fafc; /* Màu nền xám xanh nhạt */
-    min-height: 100vh; /* Chiều cao tối thiểu */
-}
-
-.about .container {
-    max-width: 1000px; /* Chiều rộng tối đa */
-}
-
-.about h1 {
-    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
-    font-size: 3rem; /* Kích thước chữ */
-    color: #63b400; /* Màu xanh lá đậm */
-    text-align: center; /* Căn giữa */
-    margin-bottom: 50px; /* Khoảng cách dưới */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
-}
-
-.mission,
-.vision,
-.values,
-.team {
-    margin-bottom: 40px; /* Khoảng cách dưới */
-    background-color: #ffffff; /* Màu trắng */
-    padding: 30px; /* Khoảng đệm */
-    border-radius: 12px; /* Bo góc */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
-}
-
-.mission:hover,
-.vision:hover,
-.values:hover,
-.team:hover {
-    transform: translateY(-8px); /* Nâng lên khi hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Tăng đổ bóng */
-}
-
-.mission h2,
-.vision h2,
-.values h2,
-.team h2 {
-    font-family: 'Montserrat', sans-serif; /* Font tiêu đề */
-    font-size: 2rem; /* Kích thước chữ */
-    color: #333; /* Màu xám đậm */
-    margin-bottom: 20px; /* Khoảng cách dưới */
-}
-
-.mission p,
-.vision p {
-    font-size: 1.1rem; /* Kích thước chữ */
-    color: #555; /* Màu xám trung */
-    line-height: 1.8; /* Độ cao dòng */
-}
-
-.values ul {
-    list-style: none; /* Xóa dấu đầu dòng */
-    padding-left: 0; /* Xóa khoảng cách trái */
-}
-
-.values ul li {
-    font-size: 1.1rem; /* Kích thước chữ */
-    color: #555; /* Màu xám trung */
-    margin-bottom: 15px; /* Khoảng cách dưới */
-    position: relative; /* Để thêm biểu tượng */
-    padding-left: 30px; /* Chừa chỗ cho biểu tượng */
-}
-
-.values ul li::before {
-    content: '\f058'; /* Biểu tượng check */
-    font-family: 'Font Awesome 6 Free'; /* Font Awesome */
-    font-weight: 900; /* Độ đậm */
-    color: #63b400; /* Màu xanh lá đậm */
-    position: absolute; /* Định vị biểu tượng */
-    left: 0; /* Bên trái */
-    top: 2px; /* Căn chỉnh dọc */
-}
-
-.team {
-    text-align: center; /* Căn giữa */
-}
-
-.team-member {
-    display: flex; /* Sử dụng flexbox */
-    flex-wrap: wrap; /* Cho phép xuống dòng */
-    justify-content: center; /* Căn giữa */
-    gap: 30px; /* Khoảng cách giữa thành viên */
-}
-
-/* Service Section: Phần Dịch Vụ */
 .service {
-    padding: 100px 20px; /* Khoảng đệm lớn để tạo không gian */
-    background-color: #f8fafc; /* Màu nền xám xanh nhạt, đồng bộ với about */
-    min-height: 100vh; /* Chiều cao tối thiểu bằng khung nhìn */
+    padding: 100px 20px; 
+    background-color: #f8fafc; 
+    min-height: 100vh; 
 }
 
-/* Tiêu đề chính của phần dịch vụ */
+
 .service h1 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat cho tiêu đề */
-    font-size: 3rem; /* Kích thước chữ lớn */
-    color: #63b400; /* Màu xanh lá đậm, đồng bộ với thiết kế */
-    text-align: center; /* Căn giữa */
-    margin-bottom: 50px; /* Khoảng cách dưới để tách biệt */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+    font-size: 3rem; 
+    color: #63b400; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    animation: fadeIn 1s ease-in; /* Hiệu ứng fadeIn */
 }
 
-/* Lưới bố cục cho các thẻ dịch vụ - Sắp xếp ngang */
+
 .service-grid {
-    display: grid; /* Sử dụng grid để sắp xếp */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tạo cột tự động, mỗi cột tối thiểu 300px */
-    gap: 20px; /* Giảm khoảng cách giữa các thẻ để giống hình ảnh */
-    margin-bottom: 40px; /* Khoảng cách dưới để tách biệt với form */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cột tự động, tối thiểu 300px */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+    margin-bottom: 40px; /* Khoảng cách dưới */
 }
 
-/* Thẻ dịch vụ */
+
 .service-card {
-    display: flex; /* Sử dụng flexbox để sắp xếp nội dung bên trong thẻ */
+    display: flex; 
     flex-direction: column; /* Sắp xếp theo cột */
     align-items: center; /* Căn giữa theo chiều ngang */
-    background-color: #ffffff; /* Màu nền trắng */
-    padding: 15px; /* Giảm padding để thẻ gọn hơn */
-    border-radius: 12px; /* Bo góc hiện đại */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ hơn */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
-    height: auto; /* Chiều cao tự động để phù hợp nội dung */
-    text-align: left; /* Căn trái văn bản */
+    background-color: #fff; 
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Hiệu ứng hover cho thẻ dịch vụ */
+
 .service-card:hover {
-    transform: translateY(-5px); /* Nâng thẻ lên ít hơn khi hover */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ hơn */
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
 }
 
-/* Hình ảnh trong thẻ dịch vụ */
+
 .service-card img {
-    width: 100%; /* Chiều rộng toàn bộ thẻ */
-    max-width: 2000px; /* Thu nhỏ chiều rộng tối đa để phù hợp với hình ảnh trong ảnh */
-    height: auto; /* Giữ tỷ lệ hình ảnh */
-    border-radius: 8px; /* Bo góc hình ảnh */
-    margin-bottom: 10px; /* Giảm khoảng cách dưới hình ảnh */
-    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    width: 100%; 
+    max-width: 2000px; 
+    height: auto; 
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+    object-fit: cover; 
 }
 
-/* Tiêu đề trong thẻ dịch vụ */
+
 .service-card h3 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat */
-    font-size: 1.2rem; /* Kích thước chữ nhỏ hơn để phù hợp với thiết kế */
-    color: #333; /* Màu xám đậm */
-    margin-bottom: 8px; /* Giảm khoảng cách dưới */
-    font-weight: 600; /* Độ đậm chữ */
+    font-size: 1.2rem; 
+    color: #333; 
+    margin-bottom: 8px; 
+    font-weight: 600; 
 }
 
-/* Đoạn văn trong thẻ dịch vụ */
+
 .service-card p {
-    font-size: 0.85rem; /* Kích thước chữ nhỏ hơn để gọn gàng */
-    color: #555; /* Màu xám trung */
-    margin-bottom: 12px; /* Giảm khoảng cách dưới */
-    line-height: 1.3; /* Độ cao dòng nhỏ hơn để phù hợp với thiết kế */
+    font-size: 0.85rem; 
+    color: #555; 
+    margin-bottom: 12px; 
+    line-height: 1.3; 
 }
 
-/* Liên kết trong thẻ dịch vụ */
+
 .service-card .card-link {
-    display: inline-block; /* Hiển thị như nút */
-    padding: 6px 12px; /* Giảm padding để nút nhỏ hơn */
-    background-color: #63b400; /* Màu xanh lá đậm */
-    color: white; /* Màu chữ trắng */
-    text-decoration: none; /* Xóa gạch chân */
-    border-radius: 5px; /* Bo góc */
-    transition: background-color 0.3s; /* Hiệu ứng hover */
-    font-size: 0.85rem; /* Kích thước chữ nhỏ hơn */
+    padding: 6px 12px; 
+    background-color: #63b400; 
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 5px;
+    font-size: 0.85rem; 
+    transition: background-color 0.3s; 
 }
+
 
 .service-card .card-link:hover {
-    background-color: #4e9100; /* Màu xanh lá đậm hơn khi hover */
+    background-color: #ff9d00; 
 }
 
-/* Form báo giá */
-.quote-form {
-    background-color: #ffffff; /* Màu nền trắng */
-    padding: 30px; /* Khoảng đệm */
-    border-radius: 12px; /* Bo góc */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    max-width: 1000px; /* Giới hạn chiều rộng */
-    margin: 0 auto; /* Căn giữa */
-}
 
-/* Tiêu đề của form */
-.quote-form h3 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat */
-    font-size: 1.8rem; /* Kích thước chữ */
-    color: #333; /* Màu xám đậm */
-    margin-bottom: 20px; /* Khoảng cách dưới */
-    text-align: center; /* Căn giữa */
-}
-
-/* Nhãn của form */
-.quote-form label {
-    display: block; /* Hiển thị trên dòng riêng */
-    font-size: 1rem; /* Kích thước chữ */
-    color: #333; /* Màu xám đậm */
-    margin-bottom: 8px; /* Khoảng cách dưới */
-}
-
-/* Trường nhập liệu của form */
-.quote-form input,
-.quote-form textarea {
-    width: 100%; /* Chiều rộng toàn bộ */
-    padding: 10px; /* Khoảng đệm */
-    border: 1px solid #ddd; /* Viền xám nhạt */
-    border-radius: 5px; /* Bo góc */
-    font-size: 1rem; /* Kích thước chữ */
-    margin-bottom: 15px; /* Khoảng cách dưới */
-    transition: border-color 0.3s; /* Hiệu ứng viền khi focus */
-}
-
-/* Hiệu ứng focus cho trường nhập liệu */
-.quote-form input:focus,
-.quote-form textarea:focus {
-    border-color: #63b400; /* Viền xanh lá khi focus */
-    outline: none; /* Xóa viền mặc định của trình duyệt */
-}
-
-/* Nút gửi của form */
-.quote-form .cta-button {
-    width: 100%; /* Chiều rộng toàn bộ */
-    padding: 12px; /* Khoảng đệm lớn hơn */
-    background-color: #ffd700; /* Màu vàng để khớp với thiết kế */
-    color: #333; /* Màu chữ */
-    border: none; /* Xóa viền */
-    border-radius: 5px; /* Bo góc */
-    cursor: pointer; /* Con trỏ chuột dạng nút */
-    font-size: 1rem; /* Kích thước chữ */
-    transition: background-color 0.3s; /* Hiệu ứng hover */
-}
-
-.quote-form .cta-button:hover {
-    background-color: #e6c200; /* Màu vàng đậm hơn khi hover */
-}
-
-/* dichvu tổng quan */
 .inner-fex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: flex-start;
-    padding: 40px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    align-items: flex-start; 
+    padding: 40px; 
+    background-color: #f9f9f9; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
 }
+
 
 .img-fex {
-    flex: 1 1 40%;
-    text-align: center;
+    flex: 1 1 40%; 
+    text-align: center; 
 }
+
 
 .img-fex img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    object-fit: cover; /* Đảm bảo hình ảnh không méo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
+
 
 .textmota-fex {
-    flex: 1 1 55%;
+    flex: 1 1 55%; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    line-height: 1.7;
+    color: #333; 
+    line-height: 1.7; 
 }
 
+
 .textmota-fex h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 24px; 
+    margin-bottom: 15px; 
     color: #2c3e50;
 }
 
+
 .textmota-fex h3 {
-    font-size: 20px;
-    margin-top: 25px;
-    color: #2e7d32;
+    font-size: 20px; 
+    margin-top: 25px; 
+    color: #2e7d32; 
 }
+
 
 .textmota-fex p {
-    margin-bottom: 15px;
-    font-size: 16px;
+    margin-bottom: 15px; 
+    font-size: 16px; 
 }
+
 
 .textmota-fex ul {
-    padding-left: 20px;
-    margin-bottom: 15px;
+    padding-left: 20px; 
+    margin-bottom: 15px; 
 }
+
 
 .textmota-fex li {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 8px;
-    font-size: 16px;
+    list-style-type: disc; 
+    margin-left: 20px; 
+    margin-bottom: 8px; 
+    font-size: 16px; 
 }
 
 
-/* sản phẩm */
+.muangay, .giohang {
+    padding: 12px 24px; 
+    font-size: 16px; 
+    font-weight: 500; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Nút "Mua Ngay" */
+.muangay {
+    background-color: #e74c3c; 
+    color: #fff; 
+}
+
+
+.muangay:hover {
+    background-color: #ff1900; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+.giohang {
+    background-color: #3498db; 
+    color: #fff; 
+}
+
+
+.giohang:hover {
+    background-color: #5d00ff; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* ==========================================================================
+   Phần Sản Phẩm (Product Section)
+   ========================================================================== */
+
 .product {
-    padding: 100px 20px; /* Khoảng đệm lớn để tạo không gian */
-    background-color: #f8fafc; /* Màu nền xám xanh nhạt, đồng bộ với about */
-    min-height: 100vh; /* Chiều cao tối thiểu bằng khung nhìn */
+    padding: 100px 20px; 
+    background-color: #f8fafc; 
+    min-height: 100vh; 
 }
 
-/* Tiêu đề chính của phần dịch vụ */
+
 .product h1 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat cho tiêu đề */
-    font-size: 3rem; /* Kích thước chữ lớn */
-    color: #63b400; /* Màu xanh lá đậm, đồng bộ với thiết kế */
-    text-align: center; /* Căn giữa */
-    margin-bottom: 50px; /* Khoảng cách dưới để tách biệt */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+    font-size: 3rem; 
+    color: #63b400; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    animation: fadeIn 1s ease-in; 
 }
+
 
 .filters {
-    display: flex
-;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 1rem; 
+    margin-bottom: 2rem; 
 }
+
+
 .filters select {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 10px; 
+    border-radius: 6px; 
+    border: 1px solid #ccc; 
 }
+
 
 .sp-gird {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Khoảng cách giữa các cột và hàng */
-    padding: 20px;
-  }
-  
-  .gia {
-    background-color: #fff3f3;
-    color: #d32f2f;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 6px 12px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 10px;
-  }
-  
-  .sp-card {
-    background-color: #fff;          /* Nền trắng */
-    border-radius: 12px;             /* Bo góc thẻ */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    padding: 16px;                   /* Khoảng cách bên trong */
-    display: flex;
-    flex-direction: column;
-    align-items: center;             /* Căn giữa hình và text */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .sp-card:hover {
-    transform: translateY(-5px);     /* Hiệu ứng nổi nhẹ khi hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
+    display: grid; /* Sử dụng grid để sắp xếp */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cột tự động, tối thiểu 300px */
+    gap: 20px; 
+    padding: 20px; 
+}
 
-  
-  .sp-card h2 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .sp-card img {
-    width: 100%;               /* Chiều rộng 100% khung card */
-    height: 400px;             /* Chiều cao cố định */
-    object-fit: cover;         /* Cắt ảnh để vừa khít mà không méo */
-    border-radius: 8px;        /* Bo góc nhẹ cho đẹp */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-  }
-  
-  .muangay, .giohang {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Mua Ngay button */
-  .muangay {
-    background-color: #e74c3c;
-    color: #fff;
-  }
-  
-  .muangay:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Thêm vào Giỏ Hàng button */
-  .giohang {
-    background-color: #3498db;
-    color: #fff;
-  }
-  
-  .giohang:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
 
-/* New:tin tức */
+.sp-card {
+    background-color: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    padding: 16px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng hover */
+}
+
+
+.sp-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+
+.sp-card img {
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.sp-card h2 {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+
+.gia {
+    background-color: #fff3f3; 
+    color: #d32f2f; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    padding: 6px 12px; 
+    border-radius: 8px; 
+    display: inline-block; 
+    margin-top: 10px; 
+}
+
+/* ==========================================================================
+   Phần Tin Tức (News Section)
+   ========================================================================== */
 
 .new {
-    padding: 100px 20px; /* Khoảng đệm lớn để tạo không gian */
-    background-color: #f8fafc; /* Màu nền xám xanh nhạt, đồng bộ với about */
-    min-height: 100vh; /* Chiều cao tối thiểu bằng khung nhìn */
+    padding: 100px 20px; 
+    background-color: #f8fafc; 
+    min-height: 100vh; 
 }
 
-/* Tiêu đề chính của phần dịch vụ */
+
 .new h1 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat cho tiêu đề */
-    font-size: 3rem; /* Kích thước chữ lớn */
-    color: #63b400; /* Màu xanh lá đậm, đồng bộ với thiết kế */
-    text-align: center; /* Căn giữa */
-    margin-bottom: 50px; /* Khoảng cách dưới để tách biệt */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+    font-size: 3rem; 
+    color: #63b400; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    animation: fadeIn 1s ease-in; 
 }
+
 
 .listnew {
-    display: grid
-    ;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-bottom: 40px;
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin-bottom: 40px; 
 }
 
 
 .tintuc {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 360px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    width: 100%; 
+    max-width: 360px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
+
 
 .tintuc:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
 }
+
 
 .tintuc img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    display: block; 
 }
+
 
 .tintuc h2 {
-    font-size: 1.5rem;
-    margin: 15px 20px 10px;
-    line-height: 1.4;
+    font-size: 1.5rem; 
+    margin: 15px 20px 10px; 
+    line-height: 1.4; 
 }
+
 
 .tintuc h2 a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
+    text-decoration: none; 
+    color: #333; 
+    transition: color 0.3s ease; 
 }
+
 
 .tintuc h2 a:hover {
-    color: #007bff;
+    color: #007bff; 
 }
+
 
 .tintuc p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0 20px 15px;
+    font-size: 0.9rem; 
+    color: #666; 
+    margin: 0 20px 15px; 
 }
+
 
 .tintuc ul {
-    font-size: 1rem;
-    color: #444;
-    margin: 0 20px 20px;
-    line-height: 1.6;
-    list-style: none;
-    padding: 0;
+    font-size: 1rem; 
+    color: #444; 
+    margin: 0 20px 20px; 
+    line-height: 1.6; 
+    list-style: none; 
+    padding: 0; 
 }
 
-/* Liên Hệ */
+/* ==========================================================================
+   Phần Liên Hệ (Contact Section)
+   ========================================================================== */
+
 .contracts {
-    padding: 100px 20px; /* Khoảng đệm lớn để tạo không gian */
-    background-color: #f8fafc; /* Màu nền xám xanh nhạt, đồng bộ với about */
-    min-height: 100vh; /* Chiều cao tối thiểu bằng khung nhìn */
+    padding: 100px 20px; 
+    background-color: #f8fafc; 
+    min-height: 100vh; 
 }
 
-/* Tiêu đề chính của phần dịch vụ */
+
 .contracts h1 {
-    font-family: 'Montserrat', sans-serif; /* Font Montserrat cho tiêu đề */
-    font-size: 3rem; /* Kích thước chữ lớn */
-    color: #63b400; /* Màu xanh lá đậm, đồng bộ với thiết kế */
-    text-align: center; /* Căn giữa */
-    margin-bottom: 50px; /* Khoảng cách dưới để tách biệt */
-    animation: fadeIn 1s ease-in; /* Hoạt ảnh fadeIn */
+    font-size: 3rem; 
+    color: #63b400; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    animation: fadeIn 1s ease-in; 
 }
 
-.contracts-gird{
-    display: grid
-    ;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin-bottom: 40px;
+
+.contracts-gird {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    margin-bottom: 40px; 
 }
 
-.contracts-form form{
-    display: flex;
-    margin-bottom: 40px;
-    flex-direction: column;
+
+.contracts-form form {
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 40px; 
 }
+
+
+.contracts-info p {
+    font-size: 1rem; 
+    margin-bottom: 10px; 
+}
+
+
+.contracts-info i {
+    margin-right: 10px; 
+    color: #63b400; 
+}
+
+/* ==========================================================================
+   11. Form Nhập Liệu
+   ========================================================================== */
+
+.quote-form, .contracts-form form {
+    background-color: #fff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* Tiêu đề trong form */
+.quote-form h3, .contracts-form h3 {
+    font-size: 1.8rem; 
+    color: #333; 
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+
+.quote-form label, .contracts-form label {
+    display: block; 
+    font-size: 1rem; 
+    color: #333; 
+    margin-bottom: 8px; 
+}
+
+
+.quote-form input, .quote-form textarea,
+.contracts-form input, .contracts-form textarea {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+}
+
+
+.quote-form input:focus, .quote-form textarea:focus,
+.contracts-form input:focus, .contracts-form textarea:focus {
+    border-color: #63b400; 
+    outline: none; 
+}
+
+/* Nút gửi trong form */
+.quote-form .cta-button, .contracts-form .cta-button {
+    width: 100%; 
+    padding: 12px; 
+    background-color: #ffd700; 
+    color: #333; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 1rem; 
+    transition: background-color 0.3s;
+}
+
+
+.quote-form .cta-button:hover, .contracts-form .cta-button:hover {
+    background-color: #e6c200; 
+}
+
+/* ==========================================================================
+   Phần Đánh Giá Khách Hàng (Testimonials Section)
+   ========================================================================== */
+
+.testimonials {
+    padding: 80px 20px; 
+    text-align: center; 
+}
+
+
+.testimonials h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+}
+
+
+.testimonial-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+}
+
+
+.testimonial-item {
+    background-color: #f9f9f9; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Đoạn văn trong đánh giá */
+.testimonial-item p {
+    font-style: italic; 
+    margin-bottom: 15px; 
+}
+
+/* Tên khách hàng trong đánh giá */
+.testimonial-item h4 {
+    color: #00ffb7; 
+}
+
+
+.testimonial-item span {
+    font-size: 0.9rem; 
+    color: #666; 
+}
+
+/* ==========================================================================
+   Phần Giới Thiệu (About Section)
+   ========================================================================== */
+
+.about {
+    padding: 120px 20px; 
+    background-color: #f8fafc; 
+    min-height: 100vh; 
+}
+
+
+.about h1 {
+    font-size: 3rem; 
+    color: #63b400; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    animation: fadeIn 1s ease-in; 
+}
+
+/* Định dạng các sứ mệnh, tầm nhìn, giá trị, đội ngũ */
+.mission, .vision, .values, .team {
+    margin-bottom: 40px; 
+    background-color: #fff; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.mission:hover, .vision:hover, .values:hover, .team:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+
+.mission h2, .vision h2, .values h2, .team h2 {
+    font-size: 2rem; 
+    color: #333; 
+    margin-bottom: 20px; 
+}
+
+
+.values ul {
+    list-style: none; 
+    padding-left: 0; 
+}
+
+
+.values ul li {
+    font-size: 1.1rem; 
+    color: #555; 
+    margin-bottom: 15px; 
+    padding-left: 30px; 
+    position: relative; 
+}
+
+
+.values ul li::before {
+    content: '\f058'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 900; 
+    color: #63b400; 
+    position: absolute; 
+    left: 0; 
+    top: 2px; 
+}
+
+/* ==========================================================================
+   14. Phần Chân Trang (Footer)
+   ========================================================================== */
+
+.footer {
+    background-color: #00ff91; 
+    color: #fff; 
+    padding: 40px 20px; 
+}
+
+/* Lưới bố cục cho chân trang */
+.footer-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cột tự động, tối thiểu 200px */
+    gap: 20px; 
+    margin-bottom: 20px; 
+}
+
+
+.footer-info h3, .footer-links h3, .footer-social h3 {
+    font-size: 1.5rem; 
+    margin-bottom: 15px; 
+}
+
+
+.footer-links ul {
+    list-style: none; 
+}
+
+
+.footer-links a {
+    color: #fff; 
+    text-decoration: none; 
+    line-height: 2; 
+}
+
+
+.footer-links a:hover {
+    color: #ffd700; 
+}
+
+
+.footer-social a {
+    color: #fff; 
+    font-size: 1.5rem; 
+    margin-right: 15px; 
+    transition: color 0.3s; 
+}
+
+/* Hiệu ứng hover cho mạng xã hội */
+.footer-social a:hover {
+    color: #ffd700; 
+}
+
+/* Bản quyền trong chân trang */
+.footer-copy {
+    text-align: center; 
+    font-size: 0.9rem; 
+}
+
+/* Nút quay lại đầu trang */
+.back-to-top {
+    display: inline-block; 
+    background-color: #ffd700; 
+    color: #333; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    text-align: center; 
+    line-height: 40px; 
+    text-decoration: none; 
+    margin-top: 20px; 
+}
+
+
+.back-to-top:hover {
+    background-color: #e6c200; 
+}
+
+
+
+
+/* ==========================================================================
+   15. Thiết Kế Phản Hồi (Responsive Design)
+   ========================================================================== */
+
+   @media (max-width: 768px) {
+    
+    .container {
+        width: 100%;
+        padding: 10px; 
+    }
+
+    
+    .navbar .container {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    
+    .nav-menu ul {
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    
+    .nav-link {
+        margin-left: 0; 
+        margin-bottom: 10px; 
+    }
+
+    
+    .auth-buttons {
+        justify-content: flex-start; 
+    }
+
+    
+    .hero h1 {
+        font-size: 2rem; 
+    }
+
+    
+    .hero p {
+        font-size: 1rem; 
+    }
+
+    
+    .service-grid, .sp-gird, .listnew, .contracts-gird {
+        grid-template-columns: 1fr; 
+    }
+
+   
+    .inner-fex {
+        flex-direction: column; 
+    }
+
+    
+    .img-fex, .textmota-fex {
+        flex: 1 1 100%; 
+    }
+}
+
